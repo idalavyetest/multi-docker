@@ -6,7 +6,7 @@ before_install:
   - docker build -t idalavye/react-test -f ./client/DockerfileDev ./client
 
 script:
-  - docker run -e CI=true USERNAME/react-test npm test
+  - docker run -e CI=true idalavye/react-test npm test
 
 after_success:
   - docker build -t idalavye/multi-client ./client
