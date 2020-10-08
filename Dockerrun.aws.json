@@ -1,0 +1,33 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "idalavye/multi-client",
+      "hostname": "client",
+      "essential": false
+    },{
+      "name": "server",
+      "image": "idalavye/multi-server",
+      "hostname": "api",
+      "essential": false
+    },{
+      "name": "worker",
+      "image": "idalavye/multi-worker",
+      "hostname": "worker",
+      "essential": false
+    },{
+      "name": "nginx",
+      "image": "idalavye/multi-nginx",
+      "hostname": "nginx",
+      "essantial": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "server"]
+    }
+  ]
+}

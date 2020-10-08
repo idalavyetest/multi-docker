@@ -1,0 +1,6 @@
+## Dockerrun.aws.yml
+
+aws docker task definition
+essential: true yaparsak, bu container hata aldığı zaman diğer container lar otamatikman durdurulur.
+vps: virtual private cloud
+fibvalues
